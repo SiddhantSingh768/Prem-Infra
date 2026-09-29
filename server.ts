@@ -10,6 +10,7 @@ const __dirname = path.dirname(__filename);
 const PUBLIC_ASSETS_DIR = path.join(__dirname, 'public');
 const ALLOWED_ASSET_SUBDIRS = new Set([
   'credentials',
+  'images',
   'previews',
   'site-photos',
 ]);
@@ -287,6 +288,15 @@ async function startServer() {
     res.setHeader('Cache-Control', 'no-store');
     res.status(201).json({ inquiry: record });
   });
+
+  // Serve static public assets (/images/*, /site-photos/*, /credentials/*, /previews/*) with 7-day caching
+  app.use(
+    express.static(PUBLIC_ASSETS_DIR, {
+      maxAge: '7d',
+      etag: true,
+      lastModified: true,
+    })
+  );
 
   // High-Speed Cached File & Credential Streaming Endpoint
   app.get('/api/file', (req, res) => {

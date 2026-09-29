@@ -70,12 +70,11 @@ export interface ClientOrganization {
   filterKey: string;
 }
 
-export const HERO_IMAGE_URL =
-  '/src/assets/images/hero_bridge_infrastructure_1790625757916.jpg';
+export const HERO_IMAGE_URL = '/images/hero-bridge-infrastructure.jpg';
 export const CAPABILITY_RAILWAY_IMAGE =
-  '/src/assets/images/capability_railway_bridge_1790625776676.jpg';
+  '/images/capability-railway-bridge.jpg';
 export const CAPABILITY_EXPRESSWAY_IMAGE =
-  '/src/assets/images/capability_expressway_flyover_1790625789386.jpg';
+  '/images/capability-expressway-flyover.jpg';
 
 export const COMPANY_INFO = {
   name: 'Prem Infrastructure Pvt. Ltd.',
